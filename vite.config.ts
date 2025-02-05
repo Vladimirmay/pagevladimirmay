@@ -42,4 +42,19 @@ export default defineConfig({
       },
     }),
   ],
+  resolve: {
+    alias: {
+      styles: "/src/styles",
+    },
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `
+          @use 'styles/variables' as v;
+          @use 'styles/mixins' as m;
+        `,
+      },
+    },
+  },
 });

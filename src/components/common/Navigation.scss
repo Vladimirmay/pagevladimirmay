@@ -1,23 +1,21 @@
 @use "sass:list";
 @use "sass:math";
-@import "../../styles/variables";
-@import "../../styles/mixins";
 
 $pages: "about", "skills", "experience", "portfolio", "vlog", "contact";
 
 .Navigation {
   position: relative;
-  width: $sidebar-width;
+  width: v.$sidebar-width;
   margin-bottom: 48px;
   &::after {
-    @include pseudo;
+    @include m.pseudo;
     top: 0;
     right: 0;
     width: 8px;
     height: 54px;
-    border-radius: math.div($border-radius, 2);
-    transition: transform $duration_medium-long $easing_out,
-      background-color $duration_short $easing_in-out;
+    border-radius: math.div(v.$border-radius, 2);
+    transition: transform v.$duration_medium-long v.$easing_out,
+      background-color v.$duration_short v.$easing_in-out;
     @for $index from 1 through list.length($pages) {
       $page: list.nth($pages, $index);
       .App_page_#{$page} & {
@@ -25,12 +23,12 @@ $pages: "about", "skills", "experience", "portfolio", "vlog", "contact";
       }
     }
     .App_color_alternate & {
-      @include animationAlternate(alternateBackgroundColor);
+      @include m.animationAlternate(alternateBackgroundColor);
     }
     .App_color_white & {
       background-color: white;
     }
-    @each $key, $value in $colors-map {
+    @each $key, $value in v.$colors-map {
       .App_color_#{$key} & {
         background-color: $value;
       }
