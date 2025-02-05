@@ -1,11 +1,43 @@
+@use "sass:math";
+@import "../styles/mixins";
+@import "../styles/variables";
+
 .App {
   position: relative;
   display: flex;
   min-width: 320px;
+  transition: background-color $duration_standard $easing_in-out;
+  &_color_alternate {
+    ::selection {
+      background-color: rgba($color_default, 0.4);
+    }
+  }
+  @each $key, $value in $colors-map {
+    &_color_#{$key} {
+      ::selection {
+        background-color: rgba($value, 0.4);
+      }
+    }
+    &_background_#{$key} {
+      background-color: $value;
+    }
+    &_background_#{$key} {
+      &::before {
+        @include pseudoGradient;
+      }
+      ::selection {
+        background-color: rgba($color_default, 0.4);
+      }
+    }
+  }
 }
 
 .App-Main {
   min-height: 100vh;
   width: 100%;
-  padding-left: 100px;
+  padding-left: $sidebar-width;
+  @include md {
+    padding-top: math.div($header_height, 2);
+    padding-left: 0;
+  }
 }

@@ -7,6 +7,8 @@ import {
   Theme,
   ThemeProvider,
 } from "@mui/material";
+
+import "#styles/index.scss";
 import { HashRouter as Router } from "react-router-dom";
 import App from "./components/App.tsx";
 import THEME from "#styles/theme";

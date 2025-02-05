@@ -1,6 +1,7 @@
 import { Drawer as MuiDrawer, IconButton } from "@mui/material";
 import { ArrowBackRounded as ArrowBackIcon } from "@mui/icons-material";
 
+import "./Drawer.scss";
 import Navigation from "../common/Navigation";
 
 interface IDrawerProps {

@@ -9,6 +9,8 @@ export const BREAKPOINT = {
 
 export const DURATION = {
   longer: 1000,
+  longest: 2000,
+  lingering: 4000,
 };
 const THEME: ThemeOptions = {
   typography: {

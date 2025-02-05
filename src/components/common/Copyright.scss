@@ -1,0 +1,30 @@
+.Copyright {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 32px;
+  color: white;
+  text-align: center;
+  font-size: 14px;
+}
+
+.Copyright-Icon {
+  position: relative;
+  top: 2px;
+  font-size: 14px;
+}
+
+.Copyright-Links {
+  padding-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Copyright-Link {
+  display: inline-flex;
+  color: white;
+  outline-color: white;
+  margin-left: 8px;
+  margin-right: 8px;
+}

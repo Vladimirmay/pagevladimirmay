@@ -1,10 +1,42 @@
-.Navigation ul {
-  margin: 0;
-  padding: 0;
-}
+@use "sass:list";
+@use "sass:math";
+@import "../../styles/variables";
+@import "../../styles/mixins";
 
-.NavigationButton {
-  width: 100px;
-  height: 54px;
-  font-size: 2rem;
+$pages: "about", "skills", "experience", "portfolio", "vlog", "contact";
+
+.Navigation {
+  position: relative;
+  width: $sidebar-width;
+  margin-bottom: 48px;
+  &::after {
+    @include pseudo;
+    top: 0;
+    right: 0;
+    width: 8px;
+    height: 54px;
+    border-radius: math.div($border-radius, 2);
+    transition: transform $duration_medium-long $easing_out,
+      background-color $duration_short $easing_in-out;
+    @for $index from 1 through list.length($pages) {
+      $page: list.nth($pages, $index);
+      .App_page_#{$page} & {
+        transform: translate3d(0, 54px * $index, 0);
+      }
+    }
+    .App_color_alternate & {
+      @include animationAlternate(alternateBackgroundColor);
+    }
+    .App_color_white & {
+      background-color: white;
+    }
+    @each $key, $value in $colors-map {
+      .App_color_#{$key} & {
+        background-color: $value;
+      }
+    }
+  }
+  .Header-Drawer > & {
+    padding-bottom: 24px;
+  }
 }

@@ -1,5 +1,5 @@
 import { BREAKPOINT } from "#/styles/theme";
-import { TRoute } from "./types";
+import { TRoute, TColor } from "./types";
 
 interface IQueryBreakpoint {
   xs: string;
@@ -18,6 +18,16 @@ interface IRoute {
   contact: TRoute;
 }
 
+interface IDetect {
+  mobile: boolean;
+  safari: boolean;
+}
+
+interface IBlankLinkProps {
+  target: string;
+  rel: string;
+}
+
 export const ROUTE: IRoute = {
   home: "/",
   about: "/about",
@@ -33,4 +43,36 @@ export const QUERY_BREAKPOINT: IQueryBreakpoint = {
   sm: `(max-width: ${BREAKPOINT.sm}px)`,
   md: `(max-width: ${BREAKPOINT.md}px)`,
   lg: `(max-width: ${BREAKPOINT.lg}px)`,
+};
+
+export const PATH_COLOR: Record<TRoute | string, TColor> = {
+  [ROUTE.home]: "alternate",
+  [ROUTE.about]: "green",
+  [ROUTE.skills]: "blue",
+  [ROUTE.experience]: "violet",
+};
+
+export const PATH_BACKGROUND_COLOR: Record<TRoute | string, TColor> = {
+  [ROUTE.portfolio]: "blue",
+  [ROUTE.contact]: "green",
+};
+
+export const TODAY = new Date();
+
+export const BLANK_LINK_PROPS: IBlankLinkProps = {
+  target: "_blank",
+  rel: "noopener noreferrer",
+};
+
+export const DETECT: IDetect = {
+  mobile: [
+    /Android/i,
+    /webOS/i,
+    /iPhone/i,
+    /iPad/i,
+    /iPod/i,
+    /BlackBerry/i,
+    /Windows Phone/i,
+  ].some((device: RegExp) => navigator.userAgent.match(device)),
+  safari: /^((?!chrome|android).)*safari/i.test(navigator.userAgent),
 };

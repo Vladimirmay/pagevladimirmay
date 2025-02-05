@@ -1,0 +1,30 @@
+@import "../../styles/mixins";
+
+.Pagination {
+  position: relative;
+  &_halfWidth {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    @include md {
+      .App_background_blue &,
+      .App_background_red & {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.Pagination-Links {
+  @include xs {
+    flex-direction: column-reverse;
+  }
+}
+
+.Pagination-Link {
+  color: white;
+  background-color: rgba(white, 0.1);
+  @include hover {
+    background-color: rgba(white, 0.2);
+  }
+}

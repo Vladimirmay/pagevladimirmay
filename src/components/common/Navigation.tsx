@@ -8,7 +8,6 @@ import {
   BuildRounded as BuildIcon,
   WorkRounded as WorkIcon,
   WidgetsRounded as WidgetsIcon,
-  CameraAltRounded as CameraAltIcon,
   MailRounded as MailIcon,
 } from "@mui/icons-material";
 
@@ -72,6 +71,5 @@ const navLinks: INavLink[] = [
   { tKey: "skills", to: ROUTE.skills, Icon: BuildIcon },
   { tKey: "experience", to: ROUTE.experience, Icon: WorkIcon },
   { tKey: "portfolio", to: ROUTE.portfolio, Icon: WidgetsIcon },
-  { tKey: "vlog", to: ROUTE.vlog, Icon: CameraAltIcon },
   { tKey: "contact", to: ROUTE.contact, Icon: MailIcon },
 ];
