@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from "react";
-import { useTranslation } from "react-i18next";
 import cn from "clsx";
 
 import "./Banner.scss";
@@ -21,21 +20,17 @@ import gptImg from "#assets/img/pictures/gpt.svg";
 
 import { ROUTE } from "#utils/constants";
 import { DURATION } from "#styles/theme";
-import Section from "#/components/common/Section";
-import Tilt from "#/components/common/Tilt";
+import { Tilt, Section } from "#components/common";
+
+type Timeout = ReturnType<typeof setTimeout>;
 
 export default function Banner() {
-  const { t } = useTranslation();
-
   return (
     <Section aside colorful contentClassName="Banner" nextTo={ROUTE.about}>
-      <h2 className="VisuallyHidden">{t("home.subtitle")}</h2>
       <div className="Banner-Content">
-        {/* <Animate effect="zoomIn" duration="longest" easing="out"> */}
         <Tilt el="figure" className="Banner-Figure" speed={DURATION.lingering}>
           <MacScreen />
         </Tilt>
-        {/* </Animate> */}
       </div>
     </Section>
   );
@@ -43,7 +38,7 @@ export default function Banner() {
 
 const MacScreen = () => {
   const [show, setShow] = useState(0);
-  const timer = useRef<any>(null);
+  const timer = useRef<Timeout | null>(null);
 
   useEffect(() => {
     const handleAutoShowSet = () => {
@@ -52,7 +47,9 @@ const MacScreen = () => {
     };
     timer.current = setTimeout(handleAutoShowSet, DURATION.longest);
     return () => {
-      clearTimeout(timer.current);
+      if (timer.current !== null) {
+        clearTimeout(timer.current);
+      }
     };
   }, []);
 

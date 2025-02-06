@@ -9,10 +9,11 @@ import {
 } from "@mui/material";
 
 import "#styles/index.scss";
+import "#utils/i18n";
 import { HashRouter as Router } from "react-router-dom";
 import App from "./components/App.tsx";
 import THEME from "#styles/theme";
-import { handleAppLoaded } from "#utils/base.ts";
+import { handleAppLoaded } from "#utils/base";
 
 const theme: Theme = createTheme(THEME as object);
 

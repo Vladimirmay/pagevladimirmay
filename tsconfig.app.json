@@ -29,7 +29,8 @@
       "#components/*": ["components/*"],
       "#data/*": ["data/*"],
       "#styles/*": ["styles/*"],
-      "#utils/*": ["utils/*"]
+      "#utils/*": ["utils/*"],
+      "#translations/*": ["translations/*"]
     }
   },
   "include": ["src"]

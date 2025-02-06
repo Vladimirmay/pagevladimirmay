@@ -14,7 +14,6 @@ interface IRoute {
   skills: TRoute;
   experience: TRoute;
   portfolio: TRoute;
-  vlog: TRoute;
   contact: TRoute;
 }
 
@@ -34,7 +33,6 @@ export const ROUTE: IRoute = {
   skills: "/skills",
   experience: "/experience",
   portfolio: "/portfolio",
-  vlog: "/vlog",
   contact: "/contact",
 };
 

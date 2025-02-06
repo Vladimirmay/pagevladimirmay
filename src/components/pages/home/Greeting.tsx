@@ -5,22 +5,14 @@ import { Button } from "@mui/material";
 import {
   WidgetsRounded as WidgetsIcon,
   MailRounded as MailIcon,
-  CameraAltRounded as CameraAltIcon,
 } from "@mui/icons-material";
 
 import "./Greeting.scss";
 import frontendImg from "#assets/img/pictures/frontend.svg";
-import youtubeImg from "#assets/img/pictures/youtube.svg";
-// import meImg from "#assets/img/pictures/me.jpg";
-// import me2xImg from "#assets/img/pictures/me@2x.jpg";
-// import meMdImg from "#assets/img/pictures/me_md.jpg";
-// import meMd2xImg from "#assets/img/pictures/me_md@2x.jpg";
-// import meXsImg from "#assets/img/pictures/me_xs.jpg";
-// import meXs2xImg from "#assets/img/pictures/me_xs@2x.jpg";
 import Section from "#/components/common/Section";
 import HelloIcon from "#assets/icons/hello.svg?react";
 import { CONTACT_LINK } from "#data/common";
-import { ROUTE, BLANK_LINK_PROPS } from "#utils/constants";
+import { ROUTE } from "#utils/constants";
 
 export default function Greeting() {
   const { t } = useTranslation();
@@ -43,10 +35,10 @@ export default function Greeting() {
           {t("home.iam")}
         </span>{" "}
         <span className="Greeting-Part Greeting-Third Greeting-Third_order_second">
-          <span className="Greeting-Main">Michael</span>
+          <span className="Greeting-Main">Vladimir</span>
         </span>{" "}
         <span className="Greeting-Part Greeting-Third Greeting-Third_order_third">
-          <span className="Greeting-Main">Any</span>
+          <span className="Greeting-Main">May</span>
           <span className="Greeting-Part Greeting-Fourth Greeting-Fourth_first">,</span>
         </span>
       </h1>
@@ -69,26 +61,6 @@ export default function Greeting() {
         </strong>
         <span className="Greeting-Part Greeting-Fourth Greeting-Fourth_second">,</span>
       </p>
-      <p className="Greeting-Text Greeting-Sixth Title">
-        <strong>
-          <span className="Greeting-Word">
-            {t("home.occupation.part3")}
-            <a
-              {...BLANK_LINK_PROPS}
-              className="Greeting-Extra Greeting-Extra_second"
-              href={CONTACT_LINK.youTube.href}
-            >
-              <img
-                className="Greeting-ExtraImg"
-                width={65}
-                height={46}
-                src={youtubeImg}
-                alt={CONTACT_LINK.youTube.title}
-              />
-            </a>
-          </span>
-        </strong>
-      </p>
       <p className="Greeting-SubText Greeting-Seventh MainText">
         {t("about.feature.position.label")}{" "}
         {t("about.feature.vlogger.extraLabel", {
@@ -110,26 +82,6 @@ export default function Greeting() {
           </Button>
         ))}
       </div>
-      {/* <picture>
-        <source
-          width={180}
-          media={QUERY_BREAKPOINT.xs}
-          srcSet={`${me.xsImg}, ${me.xsImg2x} 2x`}
-        />
-        <source
-          width={320}
-          media={QUERY_BREAKPOINT.lg}
-          srcSet={`${me.mdImg}, ${me.mdImg2x} 2x`}
-        />
-        <img
-          className="Greeting-Photo"
-          width={480}
-          src={me.img}
-          srcSet={`${me.img2x} 2x`}
-          alt={MY_NAME}
-          loading="lazy"
-        />
-      </picture> */}
     </Section>
   );
 }
@@ -145,14 +97,4 @@ const getDayTime = (): "night" | "morning" | "afternoon" | "evening" => {
 const links = [
   { key: "portfolio", color: "blue", order: "Eighth", Icon: WidgetsIcon },
   { key: "contact", color: "green", order: "Nineth", Icon: MailIcon },
-  { key: "vlog", color: "red", order: "Tenth", Icon: CameraAltIcon },
 ];
-
-// const me = {
-//   img: meImg,
-//   img2x: me2xImg,
-//   mdImg: meMdImg,
-//   mdImg2x: meMd2xImg,
-//   xsImg: meXsImg,
-//   xsImg2x: meXs2xImg,
-// };

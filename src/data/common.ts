@@ -2,17 +2,18 @@ import { YouTube as YouTubeIcon } from "@mui/icons-material";
 
 import { ISocialLink } from "#/utils/types";
 import GitHubIcon from "#assets/icons/github.svg?react";
+import InstagramIcon from "#assets/icons/instagram.svg?react";
+import VKIcon from "#assets/icons/vk.svg?react";
+import DuolingoIcon from "#assets/icons/duolingo.svg?react";
+import TelegramIcon from "#assets/icons/telegram.svg?react";
 
 interface IContactLink {
   gitHub: ISocialLink;
-  // linkedIn: ISocialLink
-  // sevenGlyphs: ISocialLink
   youTube: ISocialLink;
-  // instagram: ISocialLink
-  // vk: ISocialLink
-  // facebook: ISocialLink
-  // telegram: ISocialLink
-  // duolingo: ISocialLink
+  instagram: ISocialLink;
+  vk: ISocialLink;
+  telegram: ISocialLink;
+  duolingo: ISocialLink;
 }
 
 export const MY_NAME = "Vladimir Mayevsky";
@@ -20,58 +21,40 @@ export const MY_NAME = "Vladimir Mayevsky";
 export const CONTACT_LINK: IContactLink = {
   gitHub: {
     title: "GitHub",
-    href: "https://github.com/michaelany",
+    href: "https://github.com/Vladimirmay",
     Icon: GitHubIcon,
     size: "lg",
   },
-  // linkedIn: {
-  //   title: 'LinkedIn',
-  //   href: 'https://linkedin.com/in/michaelany',
-  //   Icon: LinkedInIcon,
-  //   size: 'sm',
-  // },
-  // telegram: {
-  //   title: 'Telegram',
-  //   href: 'https://t.me/michaelany',
-  //   Icon: TelegramIcon,
-  //   size: 'md',
-  // },
+  telegram: {
+    title: "Telegram",
+    href: "https://t.me/VMayevskiy",
+    Icon: TelegramIcon,
+    size: "md",
+  },
   youTube: {
     title: "YouTube",
-    href: "https://youtube.com/@michaelany",
+    href: "",
     Icon: YouTubeIcon,
     size: "xl",
   },
-  // instagram: {
-  //   title: 'Instagram',
-  //   href: 'https://instagram.com/anymichael',
-  //   Icon: InstagramIcon,
-  //   size: 'md',
-  // },
-  // facebook: {
-  //   title: 'Facebook',
-  //   href: 'https://facebook.com/michaelany.fb',
-  //   Icon: FacebookIcon,
-  //   size: 'sm',
-  // },
-  // sevenGlyphs: {
-  //   title: `${COMPANY.sevenGlyphs.title} Team`,
-  //   href: 'https://7glyphs.com/agency/team',
-  //   Icon: SevenGlyphsIcon,
-  //   size: 'xs',
-  // },
-  // vk: {
-  //   title: 'VK',
-  //   href: 'https://vk.com/michaelany',
-  //   Icon: VKIcon,
-  //   size: 'md',
-  // },
-  // duolingo: {
-  //   title: 'Duolingo',
-  //   href: 'https://duolingo.com/profile/michael.any',
-  //   Icon: DuolingoIcon,
-  //   size: 'md',
-  // },
+  instagram: {
+    title: "Instagram",
+    href: "https://instagram.com/vmayevskiy",
+    Icon: InstagramIcon,
+    size: "md",
+  },
+  vk: {
+    title: "VK",
+    href: "https://vk.com/vova_maevsky",
+    Icon: VKIcon,
+    size: "md",
+  },
+  duolingo: {
+    title: "Duolingo",
+    href: "https://duolingo.com/profile/volodya-1",
+    Icon: DuolingoIcon,
+    size: "md",
+  },
 };
 
 export const TECHNOLOGY_TITLE = {

@@ -1,12 +1,93 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React + TS</title>
+    <title>Vladimir May | Фронтенд разработчик</title>
+    <style>
+      @keyframes pulse {
+        from {
+          transform: scale3d(1, 1, 1);
+        }
+        50% {
+          transform: scale3d(1.1, 1.1, 1.1);
+        }
+        to {
+          transform: scale3d(1, 1, 1);
+        }
+      }
+      html {
+        overflow-y: scroll;
+      }
+      body {
+        margin: 0;
+        overflow: hidden;
+        font-family: "Neutra Text", sans-serif;
+      }
+      .Preloader {
+        top: 0;
+        left: 0;
+        position: fixed;
+        z-index: 1000;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        background-color: #62dafc;
+        transform: scale(5);
+        transition: 1000ms cubic-bezier(0.4, 0, 0.2, 1);
+        transition-property: transform, opacity;
+      }
+      .Preloader::before {
+        content: "";
+        display: block;
+        position: absolute;
+        background-image: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1));
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+      .Preloader-Logo {
+        position: absolute;
+        top: calc(50% - 50px);
+        left: calc(50% - 50px);
+        opacity: 0.01;
+        animation-play-state: paused;
+        transition: opacity 800ms cubic-bezier(0.4, 0, 0.2, 1);
+        animation: pulse 2s infinite;
+      }
+      .Preloader_show {
+        opacity: 1;
+        transform: scale(1);
+      }
+      .Preloader_show .Preloader-Logo {
+        opacity: 1;
+        animation-play-state: running;
+      }
+    </style>
   </head>
   <body>
+    <div id="preloader" class="Preloader Preloader_show">
+      <div>
+        <svg
+          class="Preloader-Logo"
+          width="100"
+          height="100"
+          viewBox="0 0 100 100"
+          fill="currentColor"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g>
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M64 1.52588e-05H0V64H64V1.52588e-05ZM18.4 58C18.0267 58 17.7467 57.9333 17.56 57.8C17.4 57.6667 17.24 57.4 17.08 57L6.68001 31.92C6.60001 31.76 6.56001 31.6 6.56001 31.44C6.56001 31.2533 6.61334 31.1067 6.72001 31C6.85334 30.8667 7.02667 30.8 7.24001 30.8H10.68C11.0267 30.8 11.2933 30.8667 11.48 31C11.6667 31.1333 11.8133 31.3467 11.92 31.64L19.48 50.84L27.04 31.64C27.1467 31.3467 27.2933 31.1333 27.48 31C27.6667 30.8667 27.9333 30.8 28.28 30.8H31.72C31.7385 30.8 31.7565 30.8005 31.7741 30.8015C31.8088 30.8005 31.8441 30.8 31.88 30.8H34.04C34.4667 30.8 34.7867 30.8533 35 30.96C35.24 31.0667 35.4267 31.28 35.56 31.6L43.64 50.2L51.72 31.6C51.8533 31.28 52.0267 31.0667 52.24 30.96C52.48 30.8533 52.8133 30.8 53.24 30.8H55.4C55.96 30.8 56.3467 30.92 56.56 31.16C56.8 31.4 56.92 31.7733 56.92 32.28V56.56C56.92 57.04 56.8 57.4 56.56 57.64C56.3467 57.88 55.9733 58 55.44 58H53.68C53.1467 58 52.76 57.88 52.52 57.64C52.28 57.4 52.16 57.04 52.16 56.56V39.32L45.32 54.56C45.1067 54.9867 44.8933 55.2933 44.68 55.48C44.4667 55.6667 44.12 55.76 43.64 55.76C43.16 55.76 42.8 55.6667 42.56 55.48C42.3467 55.2933 42.1467 54.9867 41.96 54.56L35.12 39.32V56.56C35.12 57.04 35 57.4 34.76 57.64C34.5467 57.88 34.16 58 33.6 58H31.84C31.3067 58 30.92 57.88 30.68 57.64C30.4667 57.4 30.36 57.04 30.36 56.56V36.568L21.92 57C21.76 57.4 21.5867 57.6667 21.4 57.8C21.2133 57.9333 20.9333 58 20.56 58H18.4Z"
+            />
+          </g>
+        </svg>
+      </div>
+    </div>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

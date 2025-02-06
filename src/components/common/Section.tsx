@@ -8,8 +8,7 @@ import Pagination from "./Pagination";
 
 interface ISectionProps {
   children: ReactNode;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  sectionRef?: RefObject<any>;
+  sectionRef?: RefObject<HTMLElement>;
   className?: string;
   contentClassName?: string;
   aside?: boolean;

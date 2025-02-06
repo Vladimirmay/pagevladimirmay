@@ -3,13 +3,14 @@ import { SvgIcon } from "@mui/material";
 
 type TSvgIcon = typeof SvgIcon;
 
+export type TLng = "ru" | "eng";
+
 export type TRoute =
   | "/"
   | "/about"
   | "/skills"
   | "/experience"
   | "/portfolio"
-  | "/vlog"
   | "/contact";
 
 export type TColor =
@@ -22,6 +23,16 @@ export type TColor =
   | "red"
   | "yellow"
   | "violet";
+
+export type TEffect =
+  | "top"
+  | "right"
+  | "bottom"
+  | "left"
+  | "zoomIn"
+  | "zoomInSm"
+  | "zoomOut"
+  | "zoomOutSm";
 
 export interface ISocialLink {
   title: string;

@@ -9,9 +9,9 @@ import {
 import "./Copyright.scss";
 import ReactIcon from "#assets/icons/react.svg?react";
 import MuiIcon from "#assets/icons/mui.svg?react";
-// import {Tooltip} from '#components/common'
 import { TODAY, BLANK_LINK_PROPS } from "#utils/constants";
 import { CONTACT_LINK, MAIN_TECHNOLOGY_LINK, TECHNOLOGY_TITLE } from "#/data/common";
+import Tooltip from "./Tooltip";
 
 const year = TODAY.getFullYear();
 
@@ -52,12 +52,12 @@ export default function Copyright() {
         {t("copyright.with")} <FavoriteIcon className="Copyright-Icon" />
       </p>
       <div className="Copyright-Links">
-        {links.map(({ Icon, ...link }) => (
-          //   <Tooltip key={index} title={link.title}>
-          <a {...BLANK_LINK_PROPS} className="Copyright-Link" href={link.href}>
-            <Icon />
-          </a>
-          //   </Tooltip>
+        {links.map(({ Icon, ...link }, index) => (
+          <Tooltip key={index} title={link.title}>
+            <a {...BLANK_LINK_PROPS} className="Copyright-Link" href={link.href}>
+              <Icon />
+            </a>
+          </Tooltip>
         ))}
       </div>
     </div>
